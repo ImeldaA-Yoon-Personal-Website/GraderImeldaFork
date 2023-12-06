@@ -61,6 +61,9 @@ apiRouter.use((req, res, next) => {
 const applicantsRouter = require("./applicants");
 apiRouter.use("/applicants", applicantsRouter);
 
+const usersRouter = require("./users");
+apiRouter.use("/users", usersRouter);
+
 apiRouter.use((error, req, res, next) => {
   res.send(error);
 });
