@@ -1,16 +1,24 @@
 import React, { useEffect, useState } from "react";
+import Applicant from "./Applicant";
+import { BASE_URL } from "../api";
 
 const ApplicantList = () => {
   const [applicants, setApplicants] = useState([]);
 
-  // const mockData = [
-  //   { id: 1, firstname: "Susan", lastname: "Salian" },
-  //   { id: 2, firstname: "Min", lastname: "Yun" },
-  //   { id: 3, firstname: "Cassy", lastname: "Ambly" },
-  //   { id: 4, firstname: "Eddy", lastname: "Bunt" },
-  //   { id: 5, firstname: "Diane", lastname: "Hines" },
-  //   { id: 6, firstname: "Judy", lastname: "Zint" },
-  // ];
+  async function handleDelete(applicant) {
+    const url = `${BASE_URL}/applicants/${applicant.id}`;
+    console.log("Deleting post from ", url);
+
+    try {
+      const response = await fetch(url, {
+        method: "DELETE",
+      });
+      console.log("This applicant was deleted", response);
+      await fetchApplicants();
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   async function fetchApplicants() {
     const url = "http://localhost:3006/api/v1/applicants";
@@ -31,8 +39,15 @@ const ApplicantList = () => {
         {applicants &&
           applicants.map((applicant) => {
             return (
-              <div key={applicant.id}>
-                {applicant.firstname + " " + applicant.lastname}
+              <div key={applicant.id} className="flex">
+                <Applicant applicant={applicant} />
+                <button
+                  onClick={() => {
+                    handleDelete(applicant);
+                  }}
+                >
+                  DELETE
+                </button>
               </div>
             );
           })}
