@@ -34,13 +34,14 @@ const ApplicantList = () => {
   }, []);
   return (
     <div>
-      <h1>📝 Applicant List</h1>
+      <h1> Applicant List</h1>
       <div>
         {applicants &&
           applicants.map((applicant) => {
             return (
               <div key={applicant.id} className="flex">
                 <Applicant applicant={applicant} />
+                <br /> <br />
                 <button
                   onClick={() => {
                     handleDelete(applicant);

@@ -1,4 +1,4 @@
-:root {
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -65,4 +65,229 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+} */
+*,
+*::before,
+*::after {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: rgb(245, 237, 237);
+  font-weight: bold;
+}
+
+html {
+  background-color: rgb(13, 62, 112);
+}
+
+body {
+  margin: 0;
+}
+
+.search {
+  color: rgb(255, 230, 0);
+  padding-top: 15px;
+  padding-left: 10px;
+  justify-content: center;
+}
+
+.search:hover {
+  cursor: pointer;
+}
+
+button {
+  margin-right: 10px;
+  background-color: rgb(200 0 0);
+  color: white;
+  font-weight: bold;
+  border: none;
+  height: 36px;
+  width: 75px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 1s, color 1s;
+}
+button:hover {
+  background-color: rgba(255, 255, 255, 0.587);
+  color: rgb(200 0 0);
+}
+.genre-button-isSelected {
+  background-color: rgba(4, 0, 255, 0.652);
+  padding: 10px;
+  width: auto;
+  margin: 10px 10px;
+  border-radius: 6px;
+}
+.genre-button {
+  background-color: rgba(250, 235, 215, 0.13);
+  padding: 10px;
+  width: auto;
+  margin: 10px 10px;
+  border-radius: 6px;
+}
+.genre-button:hover {
+  background-color: rgba(212, 157, 18, 0.585);
+  cursor: pointer;
+}
+.commentButton {
+  background-color: rgba(4, 0, 255, 0.652);
+  width: 110px;
+  height: 40px;
+  padding: auto;
+}
+commentButton:hover {
+  background-color: rgba(255, 255, 255, 0.587);
+  color: rgba(4, 0, 255, 0.652);
+}
+#add-comment {
+  background-color: rgba(4, 0, 255, 0.652);
+  width: 210px;
+  height: 40px;
+  padding: auto;
+}
+
+#add-comment:hover {
+  background-color: rgba(255, 255, 255, 0.587);
+  color: rgba(4, 0, 255, 0.652);
+}
+#add {
+  margin-right: 10px;
+  background-color: rgb(47, 142, 77);
+  color: rgb(244, 236, 236);
+  font-weight: bold;
+  border: none;
+  height: 36px;
+  width: 75px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 1s, color 1s;
+}
+#add:hover {
+  background-color: rgb(244, 236, 236);
+  color: rgb(47, 142, 77);
+}
+button:active {
+  opacity: 0.7;
+}
+
+input {
+  margin-left: 10px;
+}
+.link:hover {
+  text-decoration: underline 3px rgb(169, 169, 192);
+}
+
+.link {
+  margin-right: 20px;
+
+  text-decoration: none;
+  font-size: x-large;
+
+  font-weight: bolder;
+}
+
+.header-links {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0;
+  justify-content: center;
+  justify-content: space-evenly;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+select {
+  width: 150px;
+}
+
+.form {
+  text-align: center;
+}
+
+form > h2 {
+  text-align: center;
+}
+
+.left-margin {
+  margin-left: 20px;
+}
+
+h1,
+h2 {
+  font-weight: bold;
+  text-align: center;
+}
+
+.post-title {
+  font-size: 1.75em;
+}
+
+.login-title {
+  margin: 20px;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-around;
+}
+.col {
+  padding: 4px;
+}
+
+.form {
+  flex-wrap: column wrap;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.input-group {
+  display: flex;
+  gap: 7px;
+}
+
+label {
+  display: flex;
+  gap: 7px;
+  color: red;
+  font-weight: lighter;
+}
+
+.input-group > input {
+  font-size: 1.25rem;
+  padding: 0.5em;
+  border: none;
+  outline: auto;
+  border-radius: 0.25em;
+}
+
+#logoutcontainer {
+  display: flex;
+  justify-content: center;
+}
+
+.welcome,
+.subtitles {
+  font-size: x-large;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  background-color: rgba(25, 24, 27, 0.23);
+  width: auto;
+  border-radius: 6px;
+}
+.bookImage {
+  width: 200px;
+}
+.book-in-profile {
+  display: flex;
 }
