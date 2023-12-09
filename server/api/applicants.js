@@ -2,12 +2,40 @@ const express = require("express");
 const applicantsRouter = express.Router();
 
 const {
+  createApplicant,
   getAllApplicants,
   getApplicantById,
   deleteApplicantById,
   updateApplicant,
 } = require("../db");
 
+applicantsRouter.post("/", async (req, res, next) => {
+  const { firstname, middlename, lastname } = req.body;
+
+  const applicantData = {};
+
+  try {
+    applicantData.firstname = firstname;
+    applicantData.middlename = middlename;
+    applicantData.lastname = lastname;
+
+    console.log(`Trying to createApplicant ${applicantData}`);
+
+    const applicant = await createApplicant(applicantData);
+
+    if (applicant) {
+      res.send(applicant);
+    } else {
+      next({
+        name: "applicantCreationError",
+        message:
+          "There was an error creationg your applicant. Please try again. Possibly applicant's name is not unique or pre-existing",
+      });
+    }
+  } catch ({ name, message }) {
+    next({ name, message });
+  }
+});
 applicantsRouter.get("/", async (req, res, next) => {
   try {
     const allApplicants = await getAllApplicants();

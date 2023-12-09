@@ -139,7 +139,7 @@ async function updateUser(id, firstname, lastname, email, password, status) {
     const {
       rows: [user],
     } = await client.query(
-      `UPDATE users SET firstname = $2, lastname= $3, email = $4, password = $5, status = $7 WHERE id=$1 RETURNING *;`,
+      `UPDATE users SET firstname = $2, lastname= $3, email = $4, password = $5, status = $6 WHERE id=$1 RETURNING *;`,
       [id, firstname, lastname, email, password, status]
     );
     return user;
