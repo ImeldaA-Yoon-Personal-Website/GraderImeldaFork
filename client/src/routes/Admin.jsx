@@ -1,10 +1,16 @@
 import React from "react";
-
+import "../App.css";
+import "../index.css";
+import UserList from "../components/UserList";
 const Admin = () => {
   return (
-    <div>
-      <h1>Admin</h1>
-    </div>
+    <>
+      <br />
+      <br />
+      <div>
+        <UserList />
+      </div>
+    </>
   );
 };
 
