@@ -34,7 +34,9 @@ async function getAllApplicants() {
   try {
     const { rows } = await client.query(`
       SELECT *
-      FROM applicants;
+      FROM applicants
+      ORDER BY id
+      ;
     `);
     return rows;
   } catch (error) {
@@ -45,7 +47,7 @@ async function getApplicantById(id) {
   try {
     const {
       rows: [applicant],
-    } = await client.query(`SELECT * FROM applicants WHERE id = $1`, [id]);
+    } = await client.query(`SELECT * FROM applicants WHERE id = $1;`, [id]);
 
     if (!applicant) {
       throw {
