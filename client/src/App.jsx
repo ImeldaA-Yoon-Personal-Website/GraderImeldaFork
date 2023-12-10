@@ -23,7 +23,7 @@ function App() {
               PROFILE
             </NavLink>
 
-            <NavLink className="link" to="/adminpage">
+            <NavLink className="link" to="/admin">
               ADMIN
             </NavLink>
 

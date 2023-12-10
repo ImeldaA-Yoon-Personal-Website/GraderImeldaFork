@@ -136,7 +136,7 @@ p {
 }
 
 body {
-  background: rgb(45, 41, 112);
+  /* background: rgb(45, 41, 112); */
   max-width: 960px;
   color: #232323;
   margin: 0 auto;
