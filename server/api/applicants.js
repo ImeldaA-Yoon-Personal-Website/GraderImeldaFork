@@ -60,10 +60,15 @@ applicantsRouter.get("/:id", async (req, res, next) => {
 });
 applicantsRouter.patch("/:id", async (req, res, next) => {
   const { id } = req.params;
-  const { firstname, lastname } = req.body;
+  const { firstname, middlename, lastname } = req.body;
 
   try {
-    const updatedApplicant = await updateApplicant(id, firstname, lastname);
+    const updatedApplicant = await updateApplicant(
+      id,
+      firstname,
+      middlename,
+      lastname
+    );
 
     res.send({ applicant: updatedApplicant });
   } catch ({ name, message }) {
