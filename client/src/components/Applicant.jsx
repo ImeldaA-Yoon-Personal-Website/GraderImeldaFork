@@ -10,7 +10,6 @@ const Applicant = ({ applicant }) => {
   return (
     <div>
       <div>
-        {" "}
         {applicant.firstname +
           " " +
           applicant.middlename +
